@@ -1,0 +1,14 @@
+[project]
+name = "sagemaker-deployment-poc"
+version = "0.1.0"
+description = "POC for deploying a custom model to SageMaker"
+requires-python = ">=3.8"
+dependencies = [
+    "sagemaker",
+    "boto3",
+    "joblib",
+    "scikit-learn"
+]
+
+[tool.uv]
+virtualenvs.in-project = true
