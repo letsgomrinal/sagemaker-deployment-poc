@@ -1,11 +1,18 @@
 import sagemaker
+import boto3
 from sagemaker.sklearn.model import SKLearnModel
 from sagemaker import get_execution_role
-from config import bucket_name, key, instance_type, instance_count, endpoint_name
+from src.config import bucket_name, key, instance_type, instance_count, endpoint_name, role_name
 
-role = get_execution_role()
+
+
+iam = boto3.client("iam")
+response = iam.get_role(RoleName=role_name)
+role = response["Role"]["Arn"]
+
+# role = get_execution_role()  -> works in SageMaker Studio
+
 session = sagemaker.Session()
-
 model = SKLearnModel(
     model_data=f"s3://{bucket_name}/{key}",
     role=role,
