@@ -1,7 +1,7 @@
 import tarfile
 import boto3
 from botocore.exceptions import ClientError
-from src.config import bucket_name, key
+from config import bucket_name, key
 
 
 # Compress the model directory

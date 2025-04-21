@@ -2,7 +2,7 @@ import sagemaker
 import boto3
 from sagemaker.sklearn.model import SKLearnModel
 from sagemaker import get_execution_role
-from src.config import bucket_name, key, instance_type, instance_count, endpoint_name, role_name
+from config import bucket_name, key, instance_type, instance_count, endpoint_name, role_name
 
 
 

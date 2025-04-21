@@ -1,5 +1,5 @@
 from sagemaker.predictor import Predictor
-from src.config import endpoint_name
+from config import endpoint_name
 
 predictor = Predictor(endpoint_name)
 predictor.delete_endpoint()
